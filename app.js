@@ -3,8 +3,11 @@ const btn = document.getElementById('next-dog-button');
 
 btn.addEventListener('click', () => {
     fetch('https://dog.ceo/api/breeds/image/random')
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
         console.log(data.message);
+    })
+    .catch(error => {
+        console.log('Erreur : ' + error)
     })   
 });
